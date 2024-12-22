@@ -20,4 +20,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "pull request"
-              run: echo "pull requested"             
+              run: echo "pull requested"     
+    on-workflow_dispatch:
+        if: github.event_name == 'workflow_dispatch'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "workflow dispatch"
+              run: echo "on work flow retrigger"  
+
